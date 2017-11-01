@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>mando</title>
+	<style type="text/css">
+	* {
+		margin: 0;
+		padding: 0;
+	 }
+		@font-face { font-family: 'FuenteTitulo';
+			src: url('fonts/BAUHS93.TTF'),url('fonts/BAUHS93.eot') ;
+		}
+		
+	</style>
+
+	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="js/underscore-min.js"></script>
+    <script type="text/javascript" src="js/backbone-min.js"></script>
+    <script type="text/javascript" src="js/joystick_view.js"></script>
+</head>
+<body style="background-image:  url(img/fondo/fondo1.jpg); background-size: cover; background-repeat: no-repeat; onload="init()">
+
+	<script type="text/html" id="joystick-view">
+    	<canvas id="joystickCanvas" width="<%= squareSize %>" height="<%= squareSize %>" style="width: <%= squareSize %>px; height: <%= squareSize %>px;">
+        </canvas>
+    </script>
+    <div style="width: 100%; height: 100%">
+	<div id="tablaSelChar" style="width: 100%; height: 100%; position: absolute; left:0;top: 0">
+		<div style="display: inline-block; width: 100%; margin-top: 20px;" align="center">
+				<p style="font-size: 3em; font-family:FuenteTitulo; padding:0">Selecciona personaje</p>
+		</div>
+		<br style="clear:both;" />
+		<div style="width: 100%; display: inline-block; margin-top: 20px;">
+			<div style="float: left; width: 30%; margin-left: 15px; margin-right: 15px; border-radius:2em; background-color: rgba(255,255,255,0.5)" align="center">
+				<img id="vikingo" src="img/viking.png" style="height: 300px; opacity:0.5; "/>
+			</div>
+			<div style="float: left; width: 30%; margin-left: 15px; margin-right: 15px; border-radius:2em; background-color: rgba(255,255,255,0.5)" align="center">
+				<div><img id="cruzado" src="img/knight.png" style="height: 300px; opacity:0.5; "/></div>
+			</div>
+			<div style="float: left; width: 30%; margin-left: 15px; margin-right: 15px; border-radius:2em; background-color: rgba(255,255,255,0.5)" align="center">
+				<div><img id="ninja" src="img/ninja.png" style="height: 300px; opacity:0.5; "/></div>
+			</div>
+		</div>
+	</div>
+	
+	<table id="tablaPrincipal"  style="width: 100%; height: 100%; position:absolute; left:0; top:0; visibility:hidden">
+		<tr id="barraVida" height="10%">
+			<td colspan="3">
+				<div id="vida" style="background-color: green; width: 100%; height: 100%; border-radius:1.3em;"></div>
+			</td>
+		</tr>
+		<tr id="cuerpo" height="90%" align="center" valign="middle">
+			<td width="25%" id="disparo" align="center" valign="middle">
+				<div><img id="disparar" src="img/arma1.png" style="width: 240px;"/></div>
+			</td>
+			<td width="50%" id="tiposAviones"  align="center"  valign="middle">
+				<div><img id="avion1" src="img/plane-1.png" style="width: 200px;"/></div>
+				<div><img id="avion2" src="img/plane-2.png" style="width: 200px; display: none;"/></div>
+				<div><img id="avion3" src="img/plane-3.png" style="width: 200px; display: none;"/></div>
+			</td>
+			<td width="25%" id="joystick"  align="center"  valign="middle">
+				<div id="joystickContent" style="float: right;"> 
+    			</div>
+			</td>
+		</tr>
+	</table>
+	<div id="looser" style="position:absolute; top:-100%; left:0; width: 100%; height: 100%; background-color: black; display: none" align="center">
+		<p style="font-family:FuenteTitulo; font-size: 4em; color: white; margin-top: 100px;">¡¡HAS PERDIDO!!</p>
+	</div>
+	<div id="winner" style="position:absolute; top:-100%; left:0; width: 100%; height: 100%; background-color: white; display: none" align="center">
+		<p style="font-family:FuenteTitulo; font-size: 4em; color: black; margin-top: 100px;">¡¡HAS GANADO!!</p>
+	</div>
+	<div id="pistas" style="position:absolute; top:-0; left:0; width: 100%; height: 100%; background-color: white; display: none" align="center">
+		<input type="button" value="Desvela tu pista"/>
+	</div>
+	</div>
+</body>
+</html>

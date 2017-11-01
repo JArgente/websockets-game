@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Quantic travel</title>
+	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="js/portada.js"></script>
+	<style type="text/css">
+	   * {
+		  margin: 0;
+		  padding: 0;
+		}
+		@font-face { font-family: 'FuenteTitulo';
+			src: url('fonts/BAUHS93.TTF'),url('fonts/BAUHS93.eot') ;
+		}
+		
+		#boton{
+			color: white;
+			background-color:  rgb(138,0,20);
+			border: none;
+		}
+		#boton:HOVER{
+			color:  rgb(138,0,20);
+			background-color: white;
+		}
+	</style>
+</head>
+<body style="background-image:  url(img/fondo/fondo3.jpg); background-size: cover; background-repeat: no-repeat;">
+	<img style="width:100%" src="img/fondo/header2.png">
+	<div style="width: 100%; margin-top: 40px" align="center">
+		<h1 style="font-family:FuenteTitulo; font-size: 2.5em; color: rgb(138,0,20)"> LA MEJOR FORMA DE VIAJAR ENTRE MUNDOS</h1>
+
+		
+		<form id="formViajar" action="intro.html" style="width:60%; margin-top: 40px;">
+			<fieldset style="border-radius:1.5em; background-color: rgba(255,255,255,0.5)">
+				<p style="font-family:Arial; font-weight: bold; margin-top: 40px;">Introduzca coordenadas</p>
+				<br />
+				<p style="font-family:Arial; font-weight:bold; color: red; display: none; margin-bottom: 40px;" id="errorMessage">Las coordenadas introducidas no pertenecen a ningún mundo conocido</p>
+				<div style=" display: inline-block;">
+					<input id="coordX" type="text" style="float: left; margin-right: 10px;" placeholder="Coord X"/>
+					<input id="coordY" type="text" style="float:left; margin-left: 10px;"  placeholder="Coord Y"/>
+				</div>
+				<br style="clear: both;" />
+				<div id="boton" align="center" style="padding:10px 20px; display:inline-block; margin-top: 50px; margin-bottom: 50px; font-family:FuenteTitulo; border-radius:1em; border: 2px solid  rgb(138,0,20); cursor: pointer;" onclick="checkCoords();"> Viajar </div>
+			</fieldset>
+		</form>
+	</div>
+	<div align="center" style="position:absolute; width: 100%; bottom:0; height: 100px; background-color: black; color: white; font-family: Arial; font-weight: bolder;">
+		<p style="margin-top: 30px"> Todos los derechos reservados.   &copy; 2016 Quantic Travel </p>
+	</div>
+</body>
+</html>
